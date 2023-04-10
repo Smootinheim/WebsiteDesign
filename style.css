@@ -1,0 +1,285 @@
+/* Reset default styles */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.menu li {
+    display: inline;
+    margin-right: 15px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #ccc;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    float: right;
+    margin-top: 12px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin-bottom: 5px;
+}
+
+.hero {
+    background-image: url('parallax.jpg');
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 18px;
+    text-align: center;
+}
+
+.articles {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.article-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+
+.article {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.article:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.article img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.article-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.article-date {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.article-summary {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.article-link {
+    display: inline-block;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+    color: #0056b3;
+}
+
+.dark-mode {
+    background-color: #1c1c1c;
+    color: #fff;
+}
+
+.dark-mode .menu li a {
+    color: #fff;
+}
+
+.dark-mode .hero .title,
+.dark-mode .hero .subtitle,
+.dark-mode .section-title,
+.dark-mode .article-title,
+.dark-mode .article-date,
+.dark-mode .article-summary,
+.dark-mode .article-link {
+    color: #fff;
+}
+
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 200;
+}
+
+.toggle-btn span {
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: #333;
+    margin-bottom: 8px;
+    transition: background-color 0.3s;
+}
+
+.toggle-btn span:nth-child(2) {
+    width: 30px;
+}
+
+.toggle-btn span:nth-child(3) {
+    width: 20px;
+}
+
+.toggle-btn:hover span {
+    background-color: #007bff;
+}
+
+.navbar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1c1c1c;
+    z-index: 150;
+}
+
+.navbar .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar .menu li {
+    margin: 0 10px;
+}
+
+.navbar .menu li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar .menu li a:hover {
+    color: #007bff;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #1c1c1c;
+        z-index: 200;
+    }
+
+    .menu.active li {
+        margin: 20px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar .menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .navbar .menu li {
+        margin: 20px 0;
+    }
+
+    .dark-mode .menu.active li a {
+        color: #fff;
+    }
+}
